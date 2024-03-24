@@ -5,7 +5,7 @@ using UnityEngine;
 public class Fireball : MonoBehaviour
 {
     public float Lifetime = 5f;
-    public float Damage = 15f;
+    public float Damage = 25f;
     public float Speed = 1f;
     public GameObject EnemyPrefab;
     void Start()

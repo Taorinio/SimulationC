@@ -42,6 +42,7 @@ public class EnemyAI : MonoBehaviour
         if (Health <= 0) {
             Destroy(gameObject);
             Player.GetComponent<PlayerHealth>().Kills++;
+            Player.GetComponent<Progress>().AddProgress(25f);
         }
     }
     public void AttackAnim() {
