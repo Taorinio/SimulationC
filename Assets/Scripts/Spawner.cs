@@ -8,11 +8,13 @@ public class Spawner : MonoBehaviour
     public List<Transform> SpawnPoints;
     public GameObject EnemyPrefab;
     public bool IsActive = true;
-    public void Spawn() {
+    public void Spawn(int Times) {
         if (IsActive) {
-            foreach (Transform i in SpawnPoints) {
-                var Enemy = Instantiate(EnemyPrefab, i.position, Quaternion.identity);
-                Enemy.GetComponent<EnemyAI>().Player = Player;
+            for (int k = 0; k < Times; k++) {
+                foreach (Transform i in SpawnPoints) {
+                    var Enemy = Instantiate(EnemyPrefab, i.position, Quaternion.identity);
+                    Enemy.GetComponent<EnemyAI>().Player = Player;
+                }
             }
         }
     }

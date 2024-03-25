@@ -32,6 +32,6 @@ public class Progress : MonoBehaviour
     }
     public void AddProgress(float Value) {
         _progressValue += Value;
-        ValueRect.anchorMax = new Vector2(1, _progressValue / ProgressList[Level].LevelRequirement);
+        ValueRect.anchorMax = new Vector2(1, Mathf.Clamp(_progressValue / ProgressList[Level].LevelRequirement, 0, 1));
     }
 }

@@ -17,7 +17,7 @@ public class Caster : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && CanShoot) {
+        if (Input.GetMouseButton(0) && CanShoot) {
             delayer.Timer = 0;
             var Pixelball = Instantiate(PixelballPrefab, PixelCaster.position, Quaternion.identity);
             Pixelball.transform.LookAt(Target.position);

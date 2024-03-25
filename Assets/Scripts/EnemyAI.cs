@@ -30,7 +30,7 @@ public class EnemyAI : MonoBehaviour
     public void DealDamage(float damage) {
         Health -= damage;
         foreach (Renderer i in BodyParts) {
-            i.material.color = Color.Lerp(Color.black, i.material.color, Health / 100f);
+            i.material.color = Color.Lerp(new Color(0, 0, 0, i.material.color.a), i.material.color, Health / 100f);
         }
     }
     public void DealAttack() {
@@ -41,7 +41,7 @@ public class EnemyAI : MonoBehaviour
     void DieCheck() {
         if (Health <= 0) {
             Destroy(gameObject);
-            Player.GetComponent<PlayerHealth>().Kills++;
+            Player.GetComponent<KillCounter>().Kills++;
             Player.GetComponent<Progress>().AddProgress(25f);
         }
     }

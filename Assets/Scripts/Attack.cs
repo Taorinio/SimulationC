@@ -8,10 +8,10 @@ public class Attack : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        enemy.IsAttacking = true;
+        if (other.gameObject.tag == "player") enemy.IsAttacking = true;
     }
     void OnTriggerExit(Collider other)
     {
-        enemy.IsAttacking = false;
+        if (other.gameObject.tag == "player") enemy.IsAttacking = false;
     }
 }

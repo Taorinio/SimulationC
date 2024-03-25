@@ -8,7 +8,6 @@ public class PlayerHealth : MonoBehaviour
     public float Health = 100f;
     public GameObject GameOver;
     public List<GameObject> UI;
-    public int Kills = 0;
     void Update()
     {
         if (Health <= 0) {
