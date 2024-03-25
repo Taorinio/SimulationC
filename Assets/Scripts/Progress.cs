@@ -20,6 +20,7 @@ public class Progress : MonoBehaviour
     void Update()
     {
         Progresser();
+        AddProgress(0);
     }
     void Progresser() {
         if (_progressValue >= ProgressList[Level].LevelRequirement) {
@@ -31,7 +32,7 @@ public class Progress : MonoBehaviour
         }
     }
     public void AddProgress(float Value) {
+        ValueRect.anchorMax = new Vector2(1, Mathf.Clamp(_progressValue / ProgressList[Level].LevelRequirement, 0, 1f));
         _progressValue += Value;
-        ValueRect.anchorMax = new Vector2(1, Mathf.Clamp(_progressValue / ProgressList[Level].LevelRequirement, 0, 1));
     }
 }

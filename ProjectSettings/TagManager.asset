@@ -8,6 +8,7 @@ TagManager:
   - enemy
   - collider
   - player
+  - boss
   layers:
   - Default
   - TransparentFX

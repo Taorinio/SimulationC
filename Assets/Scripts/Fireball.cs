@@ -28,5 +28,9 @@ public class Fireball : MonoBehaviour
         else if (other.gameObject.tag != "enemy" && other.gameObject.tag != "collider") {
             DestroyBall();
         }
+        if (other.gameObject.tag == "boss" && other.gameObject.tag != "collider") {
+            other.gameObject.GetComponent<BossAI>().DealDamage(Damage);
+            DestroyBall();
+        }
     }
 }

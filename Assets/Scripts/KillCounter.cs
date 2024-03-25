@@ -5,6 +5,7 @@ using UnityEngine;
 public class KillCounter : MonoBehaviour
 {
     public int Kills = 0;
+    public Win WonScreen;
     public Mover Door;
     public Mover Door2;
     void Update()
@@ -14,6 +15,9 @@ public class KillCounter : MonoBehaviour
         }
         if (Kills == 44) {
             Door2.MoveToBefore();
+        }
+        if (Kills == 45) {
+            WonScreen.ShowWin();
         }
     }
 }

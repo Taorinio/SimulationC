@@ -13,7 +13,12 @@ public class Spawner : MonoBehaviour
             for (int k = 0; k < Times; k++) {
                 foreach (Transform i in SpawnPoints) {
                     var Enemy = Instantiate(EnemyPrefab, i.position, Quaternion.identity);
-                    Enemy.GetComponent<EnemyAI>().Player = Player;
+                    if (Enemy.tag == "enemy") {
+                        Enemy.GetComponent<EnemyAI>().Player = Player;
+                    }
+                    else {
+                        Enemy.GetComponent<BossAI>().Player = Player;
+                    }
                 }
             }
         }
